@@ -1,6 +1,6 @@
 package def
 
 type SimpleSession struct {
-	sessionId string
-	TTL       int64
+	UserName string
+	TTL      int64
 }
