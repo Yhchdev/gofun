@@ -1,6 +1,9 @@
 package main
 
-import _ "gofun/session"
+import (
+	_ "gofun/jwt"
+	_ "gofun/session"
+)
 
 func main() {
 
