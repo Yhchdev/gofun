@@ -20,8 +20,8 @@ gofun是一个集成了常用开发组件的web框架，直接集成了好用且
 - [ ] Redis
 
 #### OSS对象存储
-- [ ] 阿里云OSS
-- [ ] Minio
+- [X] 阿里云OSS
+- [X] Minio
 
 #### 消息中间件
 - [ ] Emqx
