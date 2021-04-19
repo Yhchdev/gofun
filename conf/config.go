@@ -18,9 +18,8 @@ const (
 	Endpoint = ""
 	//内网 Endpoint
 	EndpointInternal = ""
-
-	Accesskey = ""
-	Secret    = ""
+	Accesskey        = ""
+	Secret           = ""
 	// 是否使用内网 Endpoint
 	UseInternal = false
 	// 是否使用SSL

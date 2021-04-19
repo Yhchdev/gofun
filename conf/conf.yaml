@@ -1,0 +1,14 @@
+#==================对象存储=================
+OSS:
+  Bucket: "mybucket0e"
+  #外网 Endpoint
+  Endpoint: "oss-cn-shenzhen.aliyuncs.com"
+  #内网 Endpoint
+  EndpointInternal: "oss-cn-shenzhen-internal.aliyuncs.com"
+  Accesskey: ""
+  SecretKey: ""
+  #是否使用内网 Endpoint
+  UseInternal: false
+  # 是否使用SSL
+  UseSSL: false
+
