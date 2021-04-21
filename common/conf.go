@@ -16,7 +16,7 @@ type OSS struct {
 	Bucket           string `yaml:"Bucket"`
 	Endpoint         string `yaml:"Endpoint"`         //外网 Endpoint
 	EndpointInternal string `yaml:"EndpointInternal"` //内网 Endpoint
-	Accesskey        string `yaml:"Accesskey"`
+	AccessKey        string `yaml:"AccessKey"`
 	SecretKey        string `yaml:"SecretKey"`
 	UseInternal      bool   `yaml:"UseInternal"` //是否使用内网 Endpoint
 	UseSSL           bool   `yaml:"UseSSL"`      //是否使用SSL(对于minio有用)
