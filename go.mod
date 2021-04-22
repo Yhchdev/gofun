@@ -7,6 +7,7 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/go-ini/ini v1.62.0 // indirect
 	github.com/gofrs/uuid v4.0.0+incompatible
+	github.com/gorilla/websocket v1.4.2
 	github.com/minio/minio-go v6.0.14+incompatible
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect

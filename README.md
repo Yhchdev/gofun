@@ -32,7 +32,7 @@ gofun是一个集成了常用开发组件的web框架，直接集成了好用且
 - [ ] swagger
 
 #### 其他
-- [ ] webSocket
+- [X] 可并发调用的webSocket
 - [ ] grpc
 - [ ] elasticsearch
 - [ ] restful API 返回规范

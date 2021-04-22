@@ -7,6 +7,7 @@ import (
 	log "gofun/log"
 	_ "gofun/oss"
 	_ "gofun/session"
+	_ "gofun/socket"
 )
 
 func init() {
