@@ -19,6 +19,7 @@ gofun是一个集成了常用开发组件的web框架，直接集成了好用且
 #### 数据库
 - [ ] Mysql
 - [ ] Redis
+- [ ] mongodb
 
 #### OSS对象存储
 - [X] 阿里云OSS

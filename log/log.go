@@ -38,5 +38,6 @@ func InitLog() {
 
 	// todo：时间格式化
 	// todo：从配置文件读取日志输出级别并配置
-	// todo：使用hook将日志(含有什么的前缀)分发到不同位置文件系统/redis/钉钉/mongodb/elasticsearch
+	// todo：第三方 hook 日志按级别输出，按时间切割
+	// todo：第三方 hook 将日志(含有什么的前缀)分发到不同位置文件系统/redis/钉钉/mongodb/elasticsearch
 }
