@@ -15,6 +15,8 @@ type OSSInterface interface {
 	GetObjectToFile(ossObject string, localFile string) error
 	//拷贝对象
 	CopyObject(objectName, destObjectName string) error
+	//拷贝文件夹下的所有对象
+	CopyList(sourceObject, destObject string) error
 	//删除单个对象
 	RemoveObject(ossObject string) error
 

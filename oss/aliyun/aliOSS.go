@@ -1,4 +1,4 @@
-package oss
+package aliyun
 
 import (
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
@@ -131,6 +131,42 @@ func (this *AliOSS) CopyObject(objectName, destObjectName string) error {
 	_, err := this.Bucket.CopyObject(objectName, destObjectName)
 	if err != nil {
 		return err
+	}
+	return nil
+}
+
+// CopyLists 拷贝文件下的所有文件
+//
+// sorceObject 原文件夹
+// destObject 拷贝后的新文件夹
+func (this *AliOSS) CopyLists(sorceObject, destObject string) error {
+
+	marker := oss.Marker("")
+	prefix := oss.Prefix(sorceObject)
+	// 获取文件列表
+	for {
+		lor, err := this.Bucket.ListObjects(marker, prefix)
+		if err != nil {
+			return err
+
+		}
+
+		for _, object := range lor.Objects {
+			sourcePath := object.Key                               //原完整路径
+			destPaht := destObject + object.Key[len(sorceObject):] // 新完整路径
+			// 复制文件
+			err := this.CopyObject(sourcePath, destPaht)
+			if err != nil {
+				return err
+			}
+
+		}
+
+		prefix = oss.Prefix(lor.Prefix)
+		marker = oss.Marker(lor.NextMarker)
+		if !lor.IsTruncated {
+			break
+		}
 	}
 	return nil
 }

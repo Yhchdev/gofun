@@ -1,4 +1,4 @@
-package oss
+package minio
 
 import (
 	minio "github.com/minio/minio-go"
@@ -161,6 +161,34 @@ func (this *MinioOSS) CopyObject(objectName, destObjectName string) error {
 	err = this.Client.CopyObject(dst, src)
 	if err != nil {
 		return err
+	}
+	return nil
+}
+
+// CopyLists 拷贝文件下的所有文件
+//
+// sorceObject 原文件夹
+// destObject 拷贝后的新文件夹
+func (this *MinioOSS) CopyList(sourceObject, destObject string) error {
+
+	doneCh := make(chan struct{})
+	defer close(doneCh)
+	isRecursive := true
+	objectCh := this.Client.ListObjects(this.BucketName, sourceObject, isRecursive, doneCh)
+	for object := range objectCh {
+		if object.Err != nil {
+			err := object.Err
+			return err
+		}
+
+		src_object_name := object.Key                                       //原完整路径
+		dst_object_name := destObject + src_object_name[len(sourceObject):] //新完整路径
+
+		err := this.CopyObject(src_object_name, dst_object_name)
+		if err != nil {
+			return err
+		}
+
 	}
 	return nil
 }
