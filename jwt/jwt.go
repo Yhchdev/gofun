@@ -8,38 +8,34 @@ import (
 
 // 参考：https://learnku.com/articles/39359
 
-/*
-
 // JWTAuth 中间件，检查token
-func JWTAuth() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		token := c.Request.Header.Get("token")
-		if token == "" {
-			middleware.ResponseError(c, -1, errors.New("请求未携带token，无权限访问"))
-			c.Abort()
-			return
-		}
-		log.Print("get token: ", token)
-		j := NewJWT()
-		// parseToken 解析token包含的信息
-		claims, err := j.ParseToken(token)
-		fmt.Println("claims", claims)
-		if err != nil {
-			if err == TokenExpired {
-				middleware.ResponseError(c, -1, errors.New("授权已过期"))
-				c.Abort()
-				return
-			}
-			middleware.ResponseError(c, -1, err)
-			c.Abort()
-			return
-		}
-		// 继续交由下一个路由处理,并将解析出的信息传递下去
-		c.Set("claims", claims)
-	}
-}
-
-*/
+//func JWTAuth() gin.HandlerFunc {
+//	return func(c *gin.Context) {
+//		token := c.Request.Header.Get("token")
+//		if token == "" {
+//			middleware.ResponseError(c, -1, errors.New("请求未携带token，无权限访问"))
+//			c.Abort()
+//			return
+//		}
+//		log.Print("get token: ", token)
+//		j := NewJWT()
+//		// parseToken 解析token包含的信息
+//		claims, err := j.ParseToken(token)
+//		fmt.Println("claims", claims)
+//		if err != nil {
+//			if err == TokenExpired {
+//				middleware.ResponseError(c, -1, errors.New("授权已过期"))
+//				c.Abort()
+//				return
+//			}
+//			middleware.ResponseError(c, -1, err)
+//			c.Abort()
+//			return
+//		}
+//		// 继续交由下一个路由处理,并将解析出的信息传递下去
+//		c.Set("claims", claims)
+//	}
+//}
 
 // JWT 签名结构
 type JWT struct {

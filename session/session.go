@@ -45,7 +45,7 @@ func DeleteExpireSession(sid string) {
 
 }
 
-// SessionIsExpire:判7断session是否过期
+// SessionIsExpire:判断session是否过期
 func SessionIsExpire(sid string) (string, bool) {
 	v, ok := sessionMap.Load(sid)
 	if ok {
