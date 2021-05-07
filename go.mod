@@ -4,6 +4,7 @@ go 1.14
 
 require (
 	github.com/aliyun/aliyun-oss-go-sdk v2.1.8+incompatible
+	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.7.1
 	github.com/go-ini/ini v1.62.0 // indirect

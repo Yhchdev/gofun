@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	_ "github.com/gin-gonic/gin"
 	"gofun/common"
@@ -25,6 +26,7 @@ func init() {
 
 func main() {
 	log.Info(common.GlobalConfig.OSS.Bucket)
+	// todo：gin配置写入log中
 	gin.SetMode(gin.DebugMode)
 	engine := gin.New()
 
