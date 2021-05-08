@@ -1,9 +1,7 @@
 package main
 
 import (
-	_ "github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
-	_ "github.com/gin-gonic/gin"
 	"gofun/common"
 	_ "gofun/jwt"
 	log "gofun/log"
