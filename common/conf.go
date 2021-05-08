@@ -10,6 +10,7 @@ var GlobalConfig Config
 
 type Config struct {
 	OSS OSS `yaml:"OSS"`
+	DB  DB  `yaml:"DB"`
 }
 
 type OSS struct {
@@ -20,6 +21,12 @@ type OSS struct {
 	SecretKey        string `yaml:"SecretKey"`
 	UseInternal      bool   `yaml:"UseInternal"` //是否使用内网 Endpoint
 	UseSSL           bool   `yaml:"UseSSL"`      //是否使用SSL(对于minio有用)
+}
+
+type DB struct {
+	DSN     string `yaml:"DSN"`
+	MaxIdle int    `yaml:"MaxIdle"`
+	MaxOpen int    `yaml:"MaxOpen"`
 }
 
 func InitConfig(filePath string) error {

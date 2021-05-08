@@ -8,12 +8,14 @@ gofun是一个集成了常用开发组件的web框架，直接集成了好用且
 * [github.com/aliyun/aliyun-oss-go-sdk/oss](https://github.com/aliyun/aliyun-oss-go-sdk/oss)
 * [github.com/minio/minio-go](https://github.com/minio/minio-go)
 * [github.com/dgrijalva/jwt-go](https://github.com/dgrijalva/jwt-go)
+* [github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
 
 #### 基本功能
 - [X] 登录/注册(含参数校验)
 - [X] log
 - [X] yaml配置文件
 - [ ] 发送邮件
+- [ ] 优雅启停
 
 #### web请求路由
 - [X] gin封装
@@ -31,7 +33,7 @@ gofun是一个集成了常用开发组件的web框架，直接集成了好用且
 
 
 #### 数据库
-- [ ] Mysql
+- [X] Mysql
 - [ ] Redis
 - [ ] mongodb
 - [ ] elasticsearch
@@ -44,14 +46,12 @@ gofun是一个集成了常用开发组件的web框架，直接集成了好用且
 - [ ] Emqx
 - [ ] Rabbitmq
 
-#### 文档
-- [ ] swagger
-
 #### 其他
+- [ ] swagger 接口文档
 - [X] 可并发调用的webSocket
 - [ ] grpc
 - [ ] restful API 返回规范
-- [ ] 加解密
+- [ ] 常用工具函数(uuid)
 
 
 #### 高可用
@@ -60,5 +60,6 @@ gofun是一个集成了常用开发组件的web框架，直接集成了好用且
 - [ ] 热升级
 
 #### 应用部署
+- [ ] 部署脚本
 - [ ] docker
 - [ ] kubernetes

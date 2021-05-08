@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"gofun/common"
-	_ "gofun/jwt"
+	"gofun/database/mysql"
 	log "gofun/log"
 	_ "gofun/oss"
 	"gofun/router"
@@ -20,6 +20,9 @@ func init() {
 
 	//初始化log配置
 	log.InitLog()
+
+	//初始化mysql
+	mysql.Init()
 }
 
 func main() {

@@ -22,7 +22,7 @@ func (u *userController) Register(ctx *gin.Context) {
 
 	// 参数获取和校验,非必要(参数校验可放在前端)
 	name := ctx.PostForm("name")
-	if !govalidator.StringLength(name, "6", "10") {
+	if !govalidator.StringLength(name, "1", "10") {
 		u.Failed(ctx, ParamError, "用户名长度不正确")
 		return
 	}

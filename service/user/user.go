@@ -2,7 +2,9 @@ package user
 
 import (
 	"errors"
+	"gofun/database/mysql"
 	. "gofun/model"
+	"gorm.io/gorm"
 )
 
 type Error struct {
@@ -36,9 +38,20 @@ func New() Service {
 	}
 }
 
-func (u *userService) Register(userName, userPassword, email string) (string, error) {
+func (u *userService) Register(name, password, email string) (string, error) {
 
-	return "", nil
+	user := User{
+		Model:    gorm.Model{},
+		Name:     name,
+		Password: password,
+		Email:    email,
+	}
+
+	result := mysql.DBConn().Create(user)
+	if result.Error != nil {
+		return "", result.Error
+	}
+	return "token", nil
 }
 
 func (*userService) Login(userName, userPassword string) (string, error) {
